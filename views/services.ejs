@@ -1,0 +1,36 @@
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp pi-content--main">
+    <thead>
+        <tr>
+            <th>Users</th>
+            <th class="mdl-data-table__cell--non-numeric">Environment</th>
+            <th class="mdl-data-table__cell--non-numeric">Service name</th>
+            <th class="mdl-data-table__cell--non-numeric">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% payload.containersList.forEach(container => { %>
+        <tr>
+            <td>
+                <% if (container.usersCount > 0) { %>
+                <span class="mdl-chip mdl-color--grey-300">
+                    <span class="mdl-chip__text mdl-typography--font-bold mdl-color-text--white"><%= container.usersCount %></span>
+                </span>
+                <% } %>
+            </td>
+            <td class="mdl-data-table__cell--non-numeric"><%= container.envName %></td>
+            <td class="mdl-data-table__cell--non-numeric mdl-typography--font-bold"><%= container.serviceType %></td>
+            <td class="mdl-data-table__cell--non-numeric">
+                <% container.statusText.forEach(status => { %>
+                    <span class="mdl-chip <%= status.className %>">
+                        <span class="mdl-chip__text"><%= status.text %></span>
+                    </span>
+                <% }) %>
+            </td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+<div class="mdl-color--white mdl-shadow--2dp">
+
+</div>

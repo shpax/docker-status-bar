@@ -1,0 +1,22 @@
+{
+  "name": "docker-status-bar",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pm2 start config/pm2.json",
+    "stop": "pm2 stop config/pm2.json"
+  },
+  "dependencies": {
+    "awilix": "^2.7.0",
+    "body-parser": "~1.17.1",
+    "config": "^1.26.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "ejs": "~2.5.6",
+    "express": "~4.15.2",
+    "morgan": "~1.8.1",
+    "node-sass": "^4.5.3",
+    "node-sass-middleware": "^0.11.0",
+    "serve-favicon": "~2.4.2"
+  }
+}
